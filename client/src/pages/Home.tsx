@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import ReviewCard from "../components/ReviewCard";
 
 import Zoro from "../assets/zoro.jpg";
 
@@ -13,74 +14,36 @@ function Home() {
         </h2>
 
         <div className="row gy-3 gx-3">
-          <div className="col-md-4">
-            <div className="card w-full">
-              <img src={Zoro} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <div className="d-flex flex-row align-items-center justify-content-between">
-                  <h5 className="card-title">Roronoa Zoro</h5>
-                  <p>
-                    <small className="text-muted">Claudio Guevara</small>
-                  </p>
-                </div>
-                <p className="card-text" style={{ textAlign: "justify" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate, consequuntur.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card w-full">
-              <img src={Zoro} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <div className="d-flex flex-row align-items-center justify-content-between">
-                  <h5 className="card-title">Roronoa Zoro</h5>
-                  <p>
-                    <small className="text-muted">Claudio Guevara</small>
-                  </p>
-                </div>
-                <p className="card-text" style={{ textAlign: "justify" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate, consequuntur.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card w-full">
-              <img src={Zoro} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <div className="d-flex flex-row align-items-center justify-content-between">
-                  <h5 className="card-title">Roronoa Zoro</h5>
-                  <p>
-                    <small className="text-muted">Claudio Guevara</small>
-                  </p>
-                </div>
-                <p className="card-text" style={{ textAlign: "justify" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate, consequuntur.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card w-full">
-              <img src={Zoro} className="card-img-top" alt="..." />
-              <div className="card-body">
-                <div className="d-flex flex-row align-items-center justify-content-between">
-                  <h5 className="card-title">Roronoa Zoro</h5>
-                  <p>
-                    <small className="text-muted">Claudio Guevara</small>
-                  </p>
-                </div>
-                <p className="card-text" style={{ textAlign: "justify" }}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate, consequuntur.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ReviewCard
+            author="Claudio Guevara"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, similique?"
+            image={Zoro}
+            title="Roronoa Zoro"
+          />
+          <ReviewCard
+            author="Claudio Guevara"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, similique?"
+            image={Zoro}
+            title="Roronoa Zoro"
+          />
+          <ReviewCard
+            author="Claudio Guevara"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, similique?"
+            image={Zoro}
+            title="Roronoa Zoro"
+          />
+          <ReviewCard
+            author="Claudio Guevara"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, similique?"
+            image={Zoro}
+            title="Roronoa Zoro"
+          />
+          <ReviewCard
+            author="Claudio Guevara"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, similique?"
+            image={Zoro}
+            title="Roronoa Zoro"
+          />
         </div>
       </div>
     </>
