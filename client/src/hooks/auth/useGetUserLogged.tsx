@@ -15,7 +15,12 @@ export default function useGetUserLogged() {
         withCredentials: true,
       });
 
-      console.log(response.data.user);
+      if (response.data.user.provider === "google")
+        setUserLogged({
+          email: response.data.user.emails[0].value,
+          username: response.data.user.displayName,
+          logged: true,
+        });
 
       if (response.data.user.provider === "discord")
         setUserLogged({

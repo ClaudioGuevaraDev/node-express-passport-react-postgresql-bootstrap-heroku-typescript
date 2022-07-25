@@ -9,6 +9,7 @@ import * as routes from "./routes/index.routes";
 // Strategies
 import "./strategies/discordStrategy";
 import "./strategies/githubStrategy";
+import "./strategies/googleStrategy";
 
 const app = express();
 

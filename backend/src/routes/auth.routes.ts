@@ -3,8 +3,10 @@ import {
   discordCallback,
   getUser,
   githubCallback,
+  googleCallback,
   loginDiscord,
   loginGithub,
+  loginGoogle,
   logout,
 } from "../controllers/auth.controller";
 
@@ -14,6 +16,8 @@ router.get("/discord", loginDiscord);
 router.get("/discord/callback", discordCallback);
 router.get("/github", loginGithub);
 router.get("/github/callback", githubCallback);
+router.get("/google", loginGoogle);
+router.get("/google/callback", googleCallback);
 
 router.get("/get-user", getUser);
 router.get("/logout", logout);

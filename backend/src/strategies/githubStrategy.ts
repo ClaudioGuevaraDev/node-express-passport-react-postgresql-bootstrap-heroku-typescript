@@ -4,6 +4,14 @@ import { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } from "../config";
 
 const scopes = ["profile", "user:email"];
 
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((user: any, done) => {
+  done(null, user);
+});
+
 passport.use(
   new GithubStrategy(
     {

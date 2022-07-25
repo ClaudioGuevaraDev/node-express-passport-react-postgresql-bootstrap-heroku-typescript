@@ -9,6 +9,10 @@ function Navbar() {
   const navigate = useNavigate();
   const { userLogged } = useContext(AppContext);
 
+  const loginWithGoogle = () => {
+    window.open("http://localhost:4000/auth/google", "_self");
+  };
+
   const loginWithGithub = () => {
     window.open("http://localhost:4000/auth/github", "_self");
   };
@@ -92,6 +96,7 @@ function Navbar() {
               <button
                 className="google-button btn btn-primary w-100 d-flex flex-row align-items-center justify-content-center"
                 style={{ fontSize: "1rem" }}
+                onClick={loginWithGoogle}
               >
                 <AiOutlineGoogle className="mx-2" />
                 Sign in with Google
