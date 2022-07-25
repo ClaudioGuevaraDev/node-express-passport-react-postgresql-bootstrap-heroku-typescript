@@ -10,19 +10,19 @@ function Navbar() {
   const { userLogged } = useContext(AppContext);
 
   const loginWithGoogle = () => {
-    window.open("http://localhost:4000/auth/google", "_self");
+    window.open("/auth/google", "_self");
   };
 
   const loginWithGithub = () => {
-    window.open("http://localhost:4000/auth/github", "_self");
+    window.open("/auth/github", "_self");
   };
 
   const loginWithDiscord = () => {
-    window.open("http://localhost:4000/auth/discord", "_self");
+    window.open("/auth/discord", "_self");
   };
 
   const logout = () => {
-    window.open("http://localhost:4000/auth/logout", "_self");
+    window.open("/auth/logout", "_self");
   };
 
   return (
