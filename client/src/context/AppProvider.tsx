@@ -11,9 +11,7 @@ function AppProvider({ children }: Props) {
   const { userLogged } = useGetUserLogged();
 
   return (
-    <AppContext.Provider value={{ user: userLogged }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ userLogged }}>{children}</AppContext.Provider>
   );
 }
 

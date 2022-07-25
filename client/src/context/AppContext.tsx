@@ -2,11 +2,11 @@ import { createContext } from "react";
 import { IUserLogged } from "../interfaces/userLogged";
 
 interface IAppContext {
-  user?: IUserLogged;
+  userLogged: IUserLogged;
 }
 
 export const defaultState: IAppContext = {
-  user: {
+  userLogged: {
     username: "",
     email: "",
     logged: false,

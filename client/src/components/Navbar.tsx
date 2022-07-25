@@ -2,12 +2,19 @@ import { useNavigate } from "react-router-dom";
 import { AiOutlineGoogle } from "@react-icons/all-files/ai/AiOutlineGoogle";
 import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { RiDiscordFill } from "@react-icons/all-files/ri/RiDiscordFill";
+import { useContext } from "react";
+import AppContext from "../context/AppContext";
 
 function Navbar() {
   const navigate = useNavigate();
+  const { userLogged } = useContext(AppContext);
 
   const loginWithDiscord = () => {
     window.open("http://localhost:4000/auth/discord", "_self");
+  };
+
+  const logout = () => {
+    window.open("http://localhost:4000/auth/logout", "_self");
   };
 
   return (
@@ -35,14 +42,24 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <button
-                  className="btn btn-primary"
-                  type="button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginmodal"
-                >
-                  Login
-                </button>
+                {userLogged.logged ? (
+                  <button
+                    className="btn btn-danger"
+                    type="button"
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#loginmodal"
+                  >
+                    Login
+                  </button>
+                )}
               </li>
             </ul>
           </div>

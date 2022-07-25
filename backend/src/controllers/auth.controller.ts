@@ -10,7 +10,7 @@ export const discordCallback = passport.authenticate("discord", {
 });
 
 export const getUser = (req: Request, res: Response) => {
-    console.log(req.user)
+  console.log(req.user);
   if (req.user) {
     return res.status(200).json({
       user: req.user,
@@ -19,5 +19,14 @@ export const getUser = (req: Request, res: Response) => {
     return res.status(404).json({
       message: "User not found",
     });
+  }
+};
+
+export const logout = (req: Request, res: Response) => {
+  if (req.user) {
+    req.logout((err) => {
+      if (err) res.redirect(`${FRONTEND_DOMAIN}/`);
+    });
+    res.redirect(`${FRONTEND_DOMAIN}/`);
   }
 };
