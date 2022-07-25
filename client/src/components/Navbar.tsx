@@ -6,6 +6,10 @@ import { RiDiscordFill } from "@react-icons/all-files/ri/RiDiscordFill";
 function Navbar() {
   const navigate = useNavigate();
 
+  const loginWithDiscord = () => {
+    window.open("http://localhost:4000/auth/discord", "_self");
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -80,6 +84,7 @@ function Navbar() {
               <button
                 className="discord-button btn btn-primary w-100 d-flex flex-row align-items-center justify-content-center"
                 style={{ fontSize: "1rem" }}
+                onClick={loginWithDiscord}
               >
                 <RiDiscordFill className="mx-2" /> Sign in with Discord
               </button>

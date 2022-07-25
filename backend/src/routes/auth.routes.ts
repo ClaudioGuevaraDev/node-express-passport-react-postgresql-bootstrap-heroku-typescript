@@ -1,16 +1,15 @@
 import { Router } from "express";
-import passport from "passport";
-import { FRONTEND_DOMAIN } from "../config";
+import {
+  discordCallback,
+  getUser,
+  loginDiscord,
+} from "../controllers/auth.controller";
 
 const router = Router();
 
-router.get("/discord", passport.authenticate("discord"));
-router.get(
-  "/discord/callback",
-  passport.authenticate("discord", {
-    failureRedirect: `${FRONTEND_DOMAIN}/`,
-    successRedirect: `${FRONTEND_DOMAIN}/`,
-  })
-);
+router.get("/discord", loginDiscord);
+router.get("/discord/callback", discordCallback);
+
+router.get("/get-user", getUser);
 
 export default router;

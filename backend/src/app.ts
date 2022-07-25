@@ -12,6 +12,7 @@ import "./strategies/discordStrategy";
 const app = express();
 
 app.set("port", PORT);
+app.get("env") === "production" && app.set("trust proxy", 1);
 
 app.use(morgan("dev"));
 app.use(
@@ -26,7 +27,7 @@ app.use(
     name: "session",
     secret: SECRET_KEY,
     maxAge: 24 * 60 * 60 * 1000, // 24 hours
-    secure: true,
+    secure: app.get("env") === "production" ? true : false,
     httpOnly: true,
   })
 );

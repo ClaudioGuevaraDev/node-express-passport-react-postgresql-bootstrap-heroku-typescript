@@ -5,11 +5,11 @@ import { DISCORD_CLIENT_ID, DISCORD_CLIENT_SECRET } from "../config";
 const scopes = ["identify", "email"];
 
 passport.serializeUser((user, done) => {
-  done(null, user);
+  return done(null, user);
 });
 
 passport.deserializeUser((user: any, done) => {
-  done(null, user);
+  return done(null, user);
 });
 
 passport.use(
