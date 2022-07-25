@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { IUserLogged } from "../../interfaces/userLogged";
+import { VITE_BACKEND } from "../../services/api";
 
 export default function useGetUserLogged() {
   const [userLogged, setUserLogged] = useState<IUserLogged>({
@@ -11,7 +12,7 @@ export default function useGetUserLogged() {
 
   const getUser = async () => {
     try {
-      const response = await axios.get("/auth/get-user", {
+      const response = await axios.get(`${VITE_BACKEND}/auth/get-user`, {
         withCredentials: true,
       });
 

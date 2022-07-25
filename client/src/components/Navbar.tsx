@@ -4,25 +4,26 @@ import { AiFillGithub } from "@react-icons/all-files/ai/AiFillGithub";
 import { RiDiscordFill } from "@react-icons/all-files/ri/RiDiscordFill";
 import { useContext } from "react";
 import AppContext from "../context/AppContext";
+import { VITE_BACKEND } from "../services/api";
 
 function Navbar() {
   const navigate = useNavigate();
   const { userLogged } = useContext(AppContext);
 
   const loginWithGoogle = () => {
-    window.open("/auth/google", "_self");
+    window.open(`${VITE_BACKEND}/auth/google`, "_self");
   };
 
   const loginWithGithub = () => {
-    window.open("/auth/github", "_self");
+    window.open(`${VITE_BACKEND}/auth/github`, "_self");
   };
 
   const loginWithDiscord = () => {
-    window.open("/auth/discord", "_self");
+    window.open(`${VITE_BACKEND}/auth/discord`, "_self");
   };
 
   const logout = () => {
-    window.open("/auth/logout", "_self");
+    window.open(`${VITE_BACKEND}/auth/logout`, "_self");
   };
 
   return (
