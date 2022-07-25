@@ -9,6 +9,10 @@ function Navbar() {
   const navigate = useNavigate();
   const { userLogged } = useContext(AppContext);
 
+  const loginWithGithub = () => {
+    window.open("http://localhost:4000/auth/github", "_self");
+  };
+
   const loginWithDiscord = () => {
     window.open("http://localhost:4000/auth/discord", "_self");
   };
@@ -95,6 +99,7 @@ function Navbar() {
               <button
                 className="github-button btn btn-primary w-100 d-flex flex-row align-items-center justify-content-center my-2"
                 style={{ fontSize: "1rem" }}
+                onClick={loginWithGithub}
               >
                 <AiFillGithub className="mx-2" /> Sign in with Github
               </button>

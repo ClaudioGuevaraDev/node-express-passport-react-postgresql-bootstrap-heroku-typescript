@@ -3,10 +3,15 @@ import passport from "passport";
 import { FRONTEND_DOMAIN } from "../config";
 
 export const loginDiscord = passport.authenticate("discord");
-
 export const discordCallback = passport.authenticate("discord", {
   failureRedirect: `${FRONTEND_DOMAIN}/`,
   successRedirect: `${FRONTEND_DOMAIN}/`,
+});
+
+export const loginGithub = passport.authenticate("github");
+export const githubCallback = passport.authenticate("github", {
+  failureRedirect: `${FRONTEND_DOMAIN}`,
+  successRedirect: `${FRONTEND_DOMAIN}`,
 });
 
 export const getUser = (req: Request, res: Response) => {

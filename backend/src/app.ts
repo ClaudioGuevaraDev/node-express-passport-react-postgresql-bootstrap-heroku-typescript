@@ -8,6 +8,7 @@ import * as routes from "./routes/index.routes";
 
 // Strategies
 import "./strategies/discordStrategy";
+import "./strategies/githubStrategy";
 
 const app = express();
 
